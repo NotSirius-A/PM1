@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Termometr PM1 - Panel główny</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+  <link rel="stylesheet" href="styles.css">
+  <!-- <script src="scripts.js"></script> -->
+
+</head>
+<body>
+    <div class="content-container">
+
+        <div class="title-container">
+            <span class="title">Termometr PM1v1</span>
+            <hr>
+            <span>Praca inżynierska 2024 - Filip Grzymski</span>
+        </div>
+
+        <div class="command-console-container">
+            <div class="command-console">
+                <div class="command-console-top">
+                    <div class="command-console-inputbar-container">
+                        <!-- <label for="c">Command input:</label><br> -->
+                        <input type="text" class="command-console-inputbar" id="command-console-inputbar" name="c" placeholder="Type commands here">
+                    </div>
+                    <div class="command-console-button-container">
+                        <button class="command-console-button" id="command-console-button">Wyślij</button>
+                    </div>
+                </div>
+                <div class="command-console-bottom">
+                    <div class="command-console-output-container">
+                        <div class="command-console-output" id="command-console-output">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+</body>
+
+<script>
+async function sendCommandAndUpdate(command) {
+    const url = "/api/command?c=" + command;
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`);
+      }
+  
+      const text = await response.text();
+      appendResponseToOutput(text);
+    } catch (error) {
+      console.error(error.message);
+    }
+}
+
+function appendResponseToOutput(response) {
+    let outputLog = document.getElementById("command-console-output");
+
+    response = `<div class="command-console-output-el">${response}</div>`
+
+    outputLog.innerHTML = response + outputLog.innerHTML;
+}
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    let sendButton = document.getElementById("command-console-button");
+    let consoleInputBar = document.getElementById("command-console-inputbar");
+
+    sendButton.addEventListener("click", function() {
+        command = consoleInputBar.value;
+        sendCommandAndUpdate(command);
+    });
+});
+
+
+</script>
+
+  
+
+
+</html>

@@ -1,0 +1,339 @@
+:root {
+    --primary-background: #333;
+    --secondary-background: #444;
+    --primary-font-color: #fafafa;
+    --primary-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+    margin-top: 0.75rem;
+    background-color: var(--primary-background);
+    color: var(--primary-font-color);
+    font-family: var(--primary-font);
+    display: flex;
+    font-size: 1.1rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+hr {
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title-container {
+    margin: 1.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 2.8rem;
+    margin: 0.1rem;
+    text-align: center
+}
+
+.subtitle {
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 0.1rem;
+}
+
+.tempdisplay-list-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 1rem;
+    margin: 4rem 0;
+    width: 55vw;
+    /* box-shadow: rgba(255, 255, 255, 0.05) 1px 1px 2px 2px, rgba(255, 255, 255, 0.05) 0px 1px 5px 1px; */
+    background-color: var(--secondary-background);
+    border-radius: 7px;
+    -webkit-user-select: none;
+    user-select: none;
+    border: 4px solid transparent;
+}
+
+@property --bg-angle {
+    inherits: false;
+    initial-value: 0deg;
+    syntax: "<angle>";
+}
+
+@keyframes spin {
+    to {
+      --bg-angle: 360deg;
+    }
+  }
+
+
+
+.tempdisplay-list-container, .command-console-button {
+animation: spin 10s infinite linear running;
+
+background:
+    linear-gradient(
+        to bottom,
+        var(--secondary-background),
+        var(--secondary-background)
+    )
+    padding-box, /* ends at inner border edges */
+    /* conic-gradient(
+        from var(--bg-angle) in oklch longer hue,
+        oklch(0.75 0.27 0.9) 0 0
+    ) */
+    conic-gradient(from var(--bg-angle) at 50% 50%, #b31564, #b5166d, #c21eae, #6637e2, #4b7ff9, #51a0ff, #51a0ff, #4b7ff9, #6637e2, #c21eae, #b5166d, #b31564)
+    border-box; /* extends to outer border edges */
+
+
+}
+
+
+
+
+.tempdisplay-list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100%;
+}
+
+.tempdisplay {
+    padding: 0.5rem;
+    width: 33%;
+    text-align: center;
+}
+
+.tempdisplay-top {
+    height: 7rem;
+}
+
+.tempdisplay-title {
+    margin-top: 0rem;
+    margin-bottom: 0.4rem;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.tempdisplay-temp {
+    font-size: 1.7rem;
+    margin-top: 0.8rem;
+    margin-bottom: 0rem;
+}
+
+.interval-input-container {
+    width: 100%;
+    margin: 1rem;
+}
+
+.interval-onoff-input {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.interval-input {
+    font-size: 1.2rem;
+    padding: 0.15rem;
+    /* width: 50%; */
+    background-color: var(--secondary-background);
+    border: solid 2px rgba(255, 255, 255, 0.4);
+    color: var(--primary-font-color);
+    border-radius: 3px;
+    margin: 0.75rem;
+}
+
+/* .interval-input-label {
+} */
+
+
+.tbl-container {
+    margin: 5vh;
+    width: 85vw;
+}
+
+table{
+    width:100%;
+    table-layout: fixed;
+}
+
+
+.tbl-header{
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 5px 5px 0 0;
+}
+.tbl-content{
+    height:auto;
+    overflow-x:auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 0 0 5px 5px;
+}
+th{
+    padding: 13px 8px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: var(--primary-font-color);
+}
+td{
+    padding: 17px;
+    text-align: left;
+    vertical-align:middle;
+    font-weight: 300;
+    font-size: 1.05rem;
+    color: #fff;
+    border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+
+
+/* for custom scrollbar for webkit browser*/
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+
+
+
+
+
+
+/* Command input styles */
+
+.command-console-container {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55vw;
+}
+
+.command-console {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.command-console-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 3rem;
+}
+
+
+.command-console-inputbar-container {
+    width: 77%;
+    height: 100%;
+}
+
+.command-console-inputbar {
+    font-size: 1.1rem;
+    width: 100%;
+    font-family: sans-serif;
+    height: 100%;
+    padding: 0rem 0.5rem;
+    margin: 0;
+    box-sizing: border-box;
+    border-radius: 7px;
+    color: var(--primary-font-color);
+    background-color: var(--secondary-background);
+    border: solid var(--primary-font-color) 2px;
+    outline: none;
+}
+
+.command-console-inputbar:hover {
+    box-shadow: inset rgba(255,255,255,0.08) 0px 0px 100px;
+}
+
+.command-console-inputbar:focus {
+    box-shadow: inset rgba(255,255,255,0.08) 0px 0px 100px;
+}
+
+.command-console-inputbar:focus-visible, 
+.command-console-inputbar:active {
+    box-shadow: inset rgba(255,255,255,0.02) 0px 0px 100px, 0px 0px 1px 2px rgba(255,255,255,0.2);
+}
+
+.command-console-button-container {
+    width: 20%;
+    height: 100%;
+}
+
+.command-console-button {
+    width: 100%;
+    height: 100%;
+    font-size: 1.1rem;
+    padding: 0;
+    margin: 0;
+    border-radius: 7px;
+    /* padding: 1.3rem 0; */
+    color: var(--primary-font-color);
+    transition: all 0.15s;
+    border: 3px solid transparent;
+}
+
+.command-console-button:hover {
+    box-shadow: inset rgba(255,255,255,0.08) 0px 0px 100px;
+}
+
+.command-console-button:active {
+    box-shadow: inset rgba(255,255,255,0.25) 0px 0px 100px;
+}
+
+.command-console-bottom {
+    margin-top: 2rem;
+    width: 100%;
+    height: 35rem;
+}
+
+.command-console-output-container {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 1rem;
+    border-radius: 7px;
+    border: solid var(--primary-font-color) 2px;
+    box-sizing: border-box;
+}
+
+.command-console-output {
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    word-wrap: break-word;
+    text-wrap: wrap;
+}
+
+.command-console-output-el {
+    font-size: 0.9rem;
+    margin: 0.35rem 0;
+    word-wrap: break-word;
+    text-wrap: wrap;
+}

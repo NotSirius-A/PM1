@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Termometr PM1 - Panel główny</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js"></script>
+
+</head>
+<body>
+    <div class="content-container">
+
+        <div class="title-container">
+            <span class="title">Termometr PM1v1</span>
+            <hr>
+            <span>dshfdsjk hsdhfksjkd 2024 - DFdsfjk sdjflj</span>
+        </div>
+
+        <div class="tempdisplay-list-container">
+            <div class="tempdisplay-list">
+                <div class="tempdisplay">
+                    <div class="tempdisplay-top">
+                        <p id="tempdisplay-temp1" class="tempdisplay-temp">22.56&deg;C</p>
+                        <hr>
+                        <p id="tempdisplay-title1" class="tempdisplay-title">Sonda przy oknie</p>
+                    </div>
+                    <p id="tempdisplay-probe1" class="tempdisplay-probe">Pt100</p>
+                </div>
+                <div class="tempdisplay">
+                    <div class="tempdisplay-top">
+                        <p id="tempdisplay-temp2" class="tempdisplay-temp">202.12&deg;C</p>
+                        <hr>
+                        <p id="tempdisplay-title2" class="tempdisplay-title">Czajnik</p>
+                    </div>
+                    <p id="tempdisplay-probe2" class="tempdisplay-probe">Pt100</p>
+                </div>
+                <div class="tempdisplay">
+                    <div class="tempdisplay-top">
+                        <p id="tempdisplay-temp3" class="tempdisplay-temp">-44.56&deg;C</p>
+                        <hr>
+                        <p id="tempdisplay-title3" class="tempdisplay-title">CH2</p>
+                    </div>
+                    <p id="tempdisplay-probe3" class="tempdisplay-probe">Pt100</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="tbl-container">
+            <div class="tbl-header">
+                <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                    <tr>
+                    <th>Kanał</th>
+                    <th>Sonda</th>
+                    <th>Temperatura [C]</th>
+                    <th>Temperatura [F]</th>
+                    <th>Temperatura [K]</th>
+                    <th>Rezystancja [Ω]</th>
+                    </tr>
+                </thead>
+                </table>
+            </div>
+            <div class="tbl-content">
+                <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    <tr>
+                    <td><span id="channel1" class="measurement_val">CH_</span></td>
+                    <td><span id="probe1" class="measurement_val">probe</span></td>
+                    <td><span id="tempc1" class="measurement_val">tempc</span></td>
+                    <td><span id="tempf1" class="measurement_val">tempf</span></td>
+                    <td><span id="tempk1" class="measurement_val">tempk</span></td>
+                    <td><span id="resistance1" class="measurement_val">rez</span></td>
+                    </tr>
+                    <tr>
+                    <td><span id="channel2" class="measurement_val">CH_</span></td>
+                    <td><span id="probe2" class="measurement_val">probe</span></td>
+                    <td><span id="tempc2" class="measurement_val">tempc</span></td>
+                    <td><span id="tempf2" class="measurement_val">tempf</span></td>
+                    <td><span id="tempk2" class="measurement_val">tempk</span></td>
+                    <td><span id="resistance2" class="measurement_val">rez</span></td>
+                    </tr>
+                    <tr>
+                    <td><span id="channel3" class="measurement_val">CH_</span></td>
+                    <td><span id="probe3" class="measurement_val">probe</span></td>
+                    <td><span id="tempc3" class="measurement_val">tempc</span></td>
+                    <td><span id="tempf3" class="measurement_val">tempf</span></td>
+                    <td><span id="tempk3" class="measurement_val">tempk</span></td>
+                    <td><span id="resistance3" class="measurement_val">rez</span></td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="interval-input-container">
+            <div>
+                <label class="interval-onoff-input-label">Automatyczne odświeżanie:</label>
+                <input id="interval_onoff_input" class="interval-onoff-input" type="checkbox" checked/>
+            </div>
+            <div>
+                <label class="interval-input-label">Okres odświeżania [ms]:</label>
+                <input id="interval_input" class="interval-input" type="number" step="500" min="500" max="1000000" value="2500"/>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
+
